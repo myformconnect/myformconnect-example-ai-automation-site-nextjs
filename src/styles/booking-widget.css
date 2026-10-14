@@ -248,7 +248,7 @@
   background: var(--theme-color) !important;
   color: var(--theme-btn-text) !important;
   font-weight: 700 !important;
-  box-shadow: 0 2px 8px var(--theme-glow);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Time picker */
@@ -462,12 +462,12 @@
 .bw-btn--primary {
   background: var(--theme-color);
   color: var(--theme-btn-text);
-  box-shadow: 0 2px 8px var(--theme-glow);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .bw-btn--primary:hover:not(:disabled) {
   background: var(--theme-hover);
-  box-shadow: 0 4px 12px var(--theme-glow);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
 
 .bw-btn--secondary {

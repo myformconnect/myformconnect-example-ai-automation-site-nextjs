@@ -74,7 +74,45 @@ export default function DemoBookingSection() {
 
       {/* Tab content */}
       {activeTab === 'widget' ? (
-        <BookingWidget />
+        <div>
+          <BookingWidget />
+          <div
+            style={{
+              marginTop: '12px',
+              padding: '10px 14px',
+              borderRadius: 'var(--radius-input)',
+              backgroundColor: 'rgba(255, 255, 255, 0.03)',
+              border: '1px solid var(--border)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '8px',
+              fontSize: '12px',
+              color: 'var(--text-secondary)',
+            }}
+          >
+            <span>Can&apos;t find an open time slot?</span>
+            <button
+              type="button"
+              onClick={() => setActiveTab('form')}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: '#38BDF8',
+                fontSize: '12px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                padding: 0,
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px',
+              }}
+            >
+              Switch to Direct Form →
+            </button>
+          </div>
+        </div>
       ) : (
         <DemoRequestForm actionUrl={DEMO_REQUEST_FORM_ACTION_URL} />
       )}

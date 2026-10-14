@@ -138,13 +138,13 @@ input, textarea, select {
   border-radius: var(--radius-btn);
   transition: opacity 150ms ease, transform 150ms ease, box-shadow 200ms ease;
   white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.35);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:hover {
   background-color: var(--accent-hover);
-  opacity: 0.95;
-  box-shadow: 0 6px 22px rgba(56, 189, 248, 0.50);
+  opacity: 0.98;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.28);
 }
 
 .btn-primary:active {
