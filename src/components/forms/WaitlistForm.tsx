@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import FormAttribution from '../FormAttribution';
-import { CheckCircle2, AlertCircle, Loader2, ArrowRight, RefreshCw } from '../Icons';
+import { CheckCircle2, AlertCircle, Loader2, ArrowRight } from '../Icons';
 
 // ============================================================================
 // MyFormConnect Form Action URL for Waitlist Form
@@ -29,13 +29,6 @@ export default function WaitlistForm({
   const [email, setEmail] = useState<string>('');
   const [stage, setStage] = useState<string>('Experienced professional');
   const [role, setRole] = useState<string>('');
-
-  const handleAutofillDemo = () => {
-    setName('Elena Rostova');
-    setEmail('elena.rostova@domain.io');
-    setStage('Experienced professional');
-    setRole('Senior Frontend Architect');
-  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -83,13 +76,6 @@ export default function WaitlistForm({
     }
   };
 
-  const handleReset = () => {
-    setStatus('idle');
-    setStatusMessage('');
-    setName('');
-    setEmail('');
-    setRole('');
-  };
 
   return (
     <div
@@ -169,10 +155,10 @@ export default function WaitlistForm({
       {status === 'success' && (
         <div
           style={{
-            padding: '32px 20px',
+            padding: '36px 20px',
             textAlign: 'center',
             backgroundColor: 'var(--surface-navy)',
-            border: '1px solid rgba(255, 255, 255, 0.25)',
+            border: '1px solid rgba(74, 222, 128, 0.35)',
             borderRadius: 'var(--radius-input)',
             marginBottom: '20px',
           }}
@@ -191,84 +177,31 @@ export default function WaitlistForm({
           </div>
           <h4
             style={{
-              fontSize: '16px',
-              fontWeight: 500,
+              fontSize: '17px',
+              fontWeight: 600,
               color: 'var(--text-primary)',
               marginBottom: '6px',
             }}
           >
-            Waitlist Registration Received
+            Registration Received
           </h4>
           <p
             style={{
               fontSize: '13px',
               color: 'var(--text-secondary)',
               maxWidth: '460px',
-              margin: '0 auto 18px',
+              margin: '0 auto',
               lineHeight: 1.5,
             }}
           >
-            {statusMessage}
+            {statusMessage || 'You are on the waitlist! We will notify you as soon as early access slots open.'}
           </p>
-          <button onClick={handleReset} className="btn-secondary" style={{ fontSize: '13px' }}>
-            <RefreshCw size={13} /> Submit another response
-          </button>
         </div>
       )}
 
       {/* Active Form */}
       {status !== 'success' && (
         <form action={actionUrl} method="POST" onSubmit={handleSubmit}>
-          {/* Quick Demo Autofill Bar */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              marginBottom: '16px',
-              padding: '10px 14px',
-              backgroundColor: 'rgba(56, 189, 248, 0.10)',
-              border: '1px solid rgba(56, 189, 248, 0.3)',
-              borderRadius: 'var(--radius-input)',
-              flexWrap: 'wrap',
-              gap: '8px',
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <span
-                style={{
-                  width: '6px',
-                  height: '6px',
-                  borderRadius: '50%',
-                  backgroundColor: '#38BDF8',
-                }}
-              />
-              <span style={{ fontSize: '12px', color: '#FFFFFF', fontWeight: 500 }}>
-                Waitlist Intake Demo
-              </span>
-            </div>
-
-            <button
-              type="button"
-              onClick={handleAutofillDemo}
-              style={{
-                fontSize: '11px',
-                fontFamily: 'var(--font-sans)',
-                padding: '5px 12px',
-                borderRadius: 'var(--radius-btn)',
-                backgroundColor: '#38BDF8',
-                border: 'none',
-                color: '#060911',
-                cursor: 'pointer',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '5px',
-                fontWeight: 600,
-              }}
-            >
-              <span>⚡ Autofill Demo Candidate</span>
-            </button>
-          </div>
 
           {/* Golden Rule: Anti-spam honeypot (hidden from real users) */}
           <input
