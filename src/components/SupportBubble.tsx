@@ -129,19 +129,7 @@ export default function SupportBubble() {
           role="dialog"
           aria-modal="true"
           aria-labelledby="support-popup-title"
-          style={{
-            position: 'absolute',
-            bottom: '64px',
-            right: '0',
-            width: '380px',
-            maxWidth: 'calc(100vw - 32px)',
-            backgroundColor: '#0c0f17',
-            border: '1px solid rgba(255, 255, 255, 0.14)',
-            borderRadius: '16px',
-            boxShadow: '0 20px 48px -8px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.08)',
-            overflow: 'hidden',
-            animation: 'supportSlideUp 200ms cubic-bezier(0.16, 1, 0.3, 1)',
-          }}
+          className="support-popup"
         >
           {/* Header */}
           <div
@@ -205,7 +193,7 @@ export default function SupportBubble() {
           </div>
 
           {/* Body */}
-          <div style={{ padding: '18px' }}>
+          <div className="support-popup-body">
             {/* Success View */}
             {status === 'success' ? (
               <div style={{ textAlign: 'center', padding: '16px 8px' }}>
@@ -331,10 +319,10 @@ export default function SupportBubble() {
                   />
                 </div>
 
-                {/* Issue Field */}
+                {/* Issue Category Dropdown */}
                 <div style={{ marginBottom: '12px' }}>
                   <label
-                    htmlFor="support-issue"
+                    htmlFor="support-category"
                     style={{
                       display: 'block',
                       fontSize: '12px',
@@ -343,11 +331,51 @@ export default function SupportBubble() {
                       marginBottom: '4px',
                     }}
                   >
-                    Issue or Question <span style={{ color: '#38BDF8' }}>*</span>
+                    Issue Category <span style={{ color: '#38BDF8' }}>*</span>
+                  </label>
+                  <select
+                    id="support-category"
+                    name="issue_category"
+                    required
+                    defaultValue="Technical issue / Bug"
+                    className="form-select"
+                    style={{ fontSize: '13px', padding: '8px 36px 8px 12px' }}
+                  >
+                    <option value="Technical issue / Bug" style={{ backgroundColor: '#0c0f17', color: '#FFFFFF' }}>
+                      Technical issue / Bug
+                    </option>
+                    <option value="Form submission problem" style={{ backgroundColor: '#0c0f17', color: '#FFFFFF' }}>
+                      Form submission problem
+                    </option>
+                    <option value="Account / Access" style={{ backgroundColor: '#0c0f17', color: '#FFFFFF' }}>
+                      Account / Access
+                    </option>
+                    <option value="Feature suggestion" style={{ backgroundColor: '#0c0f17', color: '#FFFFFF' }}>
+                      Feature suggestion
+                    </option>
+                    <option value="General question" style={{ backgroundColor: '#0c0f17', color: '#FFFFFF' }}>
+                      General question
+                    </option>
+                  </select>
+                </div>
+
+                {/* Description Field */}
+                <div style={{ marginBottom: '12px' }}>
+                  <label
+                    htmlFor="support-description"
+                    style={{
+                      display: 'block',
+                      fontSize: '12px',
+                      fontWeight: 500,
+                      color: 'rgba(255, 255, 255, 0.85)',
+                      marginBottom: '4px',
+                    }}
+                  >
+                    Description <span style={{ color: '#38BDF8' }}>*</span>
                   </label>
                   <textarea
-                    id="support-issue"
-                    name="issue"
+                    id="support-description"
+                    name="description"
                     rows={3}
                     required
                     placeholder="Describe what happened or what you need help with..."
@@ -529,16 +557,66 @@ export default function SupportBubble() {
         {isOpen ? <X size={20} strokeWidth={2.5} /> : <MessageSquare size={20} strokeWidth={2.2} />}
       </button>
 
-      {/* Inline styles for subtle keyframe animation */}
+      {/* Styles for left-positioned popup and hidden scrollbars */}
       <style jsx>{`
-        @keyframes supportSlideUp {
+        .support-popup {
+          position: absolute;
+          right: 64px;
+          bottom: 0;
+          width: 400px;
+          max-width: calc(100vw - 100px);
+          max-height: calc(100vh - 48px);
+          background-color: #0c0f17;
+          border: 1px solid rgba(255, 255, 255, 0.14);
+          border-radius: 16px;
+          box-shadow: 0 20px 48px -8px rgba(0, 0, 0, 0.75), 0 0 1px 1px rgba(255, 255, 255, 0.08);
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          animation: supportSlideLeft 200ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .support-popup-body {
+          padding: 18px 20px;
+          overflow-y: auto;
+          scrollbar-width: none; /* Firefox */
+          -ms-overflow-style: none; /* IE/Edge */
+        }
+
+        .support-popup-body::-webkit-scrollbar {
+          display: none; /* Chrome, Safari, Edge */
+        }
+
+        @keyframes supportSlideLeft {
           from {
             opacity: 0;
-            transform: translateY(12px) scale(0.97);
+            transform: translateX(12px) scale(0.98);
           }
           to {
             opacity: 1;
-            transform: translateY(0) scale(1);
+            transform: translateX(0) scale(1);
+          }
+        }
+
+        @media (max-width: 540px) {
+          .support-popup {
+            right: 0;
+            bottom: 64px;
+            width: calc(100vw - 32px);
+            max-width: calc(100vw - 32px);
+            max-height: calc(100vh - 100px);
+            animation: supportSlideUpMobile 200ms cubic-bezier(0.16, 1, 0.3, 1);
+          }
+
+          @keyframes supportSlideUpMobile {
+            from {
+              opacity: 0;
+              transform: translateY(12px) scale(0.98);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0) scale(1);
+            }
           }
         }
       `}</style>
