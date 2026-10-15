@@ -9,14 +9,14 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Contact & Support',
   description:
-    'Have questions about AutoSubmit, custom ATS form endpoints, or enterprise partnerships? Get in touch with our team directly.',
+    'Contact the AutoSubmit team for technical assistance, ATS integrations, and enterprise partnerships.',
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
     title: 'Contact & Support — AutoSubmit',
     description:
-      'Have questions about AutoSubmit, custom ATS form endpoints, or enterprise partnerships? Get in touch with our team directly.',
+      'Contact the AutoSubmit team for technical assistance, ATS integrations, and enterprise partnerships.',
     url: '/contact',
     type: 'website',
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Contact & Support — AutoSubmit',
     description:
-      'Have questions about AutoSubmit, custom ATS form endpoints, or enterprise partnerships? Get in touch with our team directly.',
+      'Contact the AutoSubmit team for technical assistance, ATS integrations, and enterprise partnerships.',
   },
 };
 

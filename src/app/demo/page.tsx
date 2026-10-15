@@ -9,14 +9,14 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Request a Demo Walkthrough',
   description:
-    'Schedule a tailored 1-on-1 walkthrough of the AutoSubmit career copilot and serverless MyFormConnect form automation.',
+    'Schedule a 1-on-1 walkthrough of AutoSubmit career automation and serverless form workflows.',
   alternates: {
     canonical: '/demo',
   },
   openGraph: {
     title: 'Request a Demo Walkthrough — AutoSubmit',
     description:
-      'Schedule a tailored 1-on-1 walkthrough of the AutoSubmit career copilot and serverless MyFormConnect form automation.',
+      'Schedule a 1-on-1 walkthrough of AutoSubmit career automation and serverless form workflows.',
     url: '/demo',
     type: 'website',
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Request a Demo Walkthrough — AutoSubmit',
     description:
-      'Schedule a tailored 1-on-1 walkthrough of the AutoSubmit career copilot and serverless MyFormConnect form automation.',
+      'Schedule a 1-on-1 walkthrough of AutoSubmit career automation and serverless form workflows.',
   },
 };
 

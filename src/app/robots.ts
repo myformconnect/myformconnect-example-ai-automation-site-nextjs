@@ -1,8 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : 'https://autosubmitagent.vercel.com');
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://autosubmitagent.vercel.app';
 
 export default function robots(): MetadataRoute.Robots {
   return {

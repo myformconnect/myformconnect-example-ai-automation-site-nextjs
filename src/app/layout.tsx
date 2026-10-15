@@ -2,9 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import SupportBubble from "@/components/SupportBubble";
 
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : "https://autosubmitagent.vercel.com");
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://autosubmitagent.vercel.app";
 
 export const viewport: Viewport = {
   themeColor: "#000000",
@@ -21,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | AutoSubmit",
   },
   description:
-    "AutoSubmit helps job seekers match their profiles with job requirements and prepare tailored career applications with less repetitive work. Featuring bot friendly forms managed by MyFormConnect.",
+    "AutoSubmit matches your profile with job criteria and stages tailored applications with complete human oversight.",
   applicationName: "AutoSubmit",
   authors: [{ name: "AutoSubmit Team", url: SITE_URL }],
   generator: "Next.js",
@@ -69,15 +67,25 @@ export const metadata: Metadata = {
     siteName: "AutoSubmit",
     title: "AutoSubmit — AI-Powered Career Application Automation",
     description:
-      "AutoSubmit matches candidate profiles with target job requirements, extracts qualification signals, and stages draft submissions with 100% human oversight.",
+      "AutoSubmit matches your profile with job criteria and stages tailored applications with complete human oversight.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "AutoSubmit — AI-Powered Career Application Automation",
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "AutoSubmit — AI-Powered Career Application Automation",
     description:
-      "AutoSubmit matches candidate profiles with target job requirements, extracts qualification signals, and stages draft submissions with 100% human oversight.",
+      "AutoSubmit matches your profile with job criteria and stages tailored applications with complete human oversight.",
     creator: "@autosubmit",
     site: "@autosubmit",
+    images: ["/og-image.png"],
   },
   category: "technology",
 };
