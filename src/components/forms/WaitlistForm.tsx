@@ -100,7 +100,7 @@ export default function WaitlistForm({
         >
           <div>
             <span className="section-label" style={{ marginBottom: '6px' }}>
-              02 / EARLY ACCESS WAITLIST
+              EARLY ACCESS WAITLIST
             </span>
             <h3
               style={{

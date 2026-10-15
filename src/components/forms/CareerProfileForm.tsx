@@ -108,7 +108,7 @@ export default function CareerProfileForm({
         >
           <div>
             <span className="section-label" style={{ marginBottom: '6px' }}>
-              01 / CAREER PROFILE — PRIMARY WORKFLOW
+              CAREER PROFILE — PRIMARY WORKFLOW
             </span>
             <h3
               style={{

@@ -78,7 +78,7 @@ export default function Features() {
       <div className="container">
         {/* Section Header */}
         <ScrollReveal style={{ maxWidth: '640px', marginBottom: '40px' }}>
-          <span className="section-label">02 / THE AUTOMATION LAYER</span>
+          <span className="section-label">THE AUTOMATION LAYER</span>
           <h2 className="section-title">
             Built around the work between finding a job and applying.
           </h2>

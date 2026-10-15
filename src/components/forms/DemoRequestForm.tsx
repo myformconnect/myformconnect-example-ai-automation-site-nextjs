@@ -97,7 +97,7 @@ export default function DemoRequestForm({
         >
           <div>
             <span className="section-label" style={{ marginBottom: '6px' }}>
-              05 / PRODUCT DEMONSTRATION WALKTHROUGH
+              PRODUCT DEMONSTRATION WALKTHROUGH
             </span>
             <h3
               style={{

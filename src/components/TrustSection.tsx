@@ -41,7 +41,7 @@ export default function TrustSection() {
       <div className="container">
         {/* Header */}
         <ScrollReveal style={{ maxWidth: '640px', marginBottom: '40px' }}>
-          <span className="section-label">05 / BUILT FOR YOUR OVERSIGHT</span>
+          <span className="section-label">BUILT FOR YOUR OVERSIGHT</span>
           <h2 className="section-title">
             Automation does the heavy lifting. You retain full authority.
           </h2>

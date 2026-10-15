@@ -49,7 +49,7 @@ export default function DemoPage() {
             <div>
               <ScrollReveal>
                 <span className="section-label" style={{ marginBottom: '14px' }}>
-                  05 / PRODUCT WALKTHROUGH
+                  PRODUCT WALKTHROUGH
                 </span>
 
                 <h1

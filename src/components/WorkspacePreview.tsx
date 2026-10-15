@@ -96,7 +96,7 @@ export default function WorkspacePreview() {
       <div className="container">
         {/* Section Header */}
         <ScrollReveal style={{ maxWidth: '640px', marginBottom: '40px' }}>
-          <span className="section-label">03 / YOUR APPLICATION WORKSPACE</span>
+          <span className="section-label">YOUR APPLICATION WORKSPACE</span>
           <h2 className="section-title">
             See what your agent is preparing.
           </h2>

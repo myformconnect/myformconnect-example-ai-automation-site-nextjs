@@ -49,7 +49,7 @@ export default function ContactPage() {
             <div>
               <ScrollReveal>
                 <span className="section-label" style={{ marginBottom: '14px' }}>
-                  04 / GET IN TOUCH
+                  GET IN TOUCH
                 </span>
 
                 <h1

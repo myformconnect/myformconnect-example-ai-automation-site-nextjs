@@ -27,7 +27,7 @@ export interface FormConfig {
 export const MFC_FORM_CONFIGS: Record<string, FormConfig> = {
   'career-profile': {
     id: 'career-profile',
-    badge: '01 / Career Profile — Primary Workflow',
+    badge: 'Career Profile — Primary Workflow',
     title: 'Prepare your career profile',
     description:
       'Ground your resume, skills, and target job requirements for tailored agent-assisted application preparation.',
@@ -43,7 +43,7 @@ export const MFC_FORM_CONFIGS: Record<string, FormConfig> = {
   },
   waitlist: {
     id: 'waitlist',
-    badge: '02 / Early Access Waitlist',
+    badge: 'Early Access Waitlist',
     title: 'Get early access',
     description:
       'Join forward-thinking job seekers securing early access to AutoSubmit career automation tools.',
@@ -57,7 +57,7 @@ export const MFC_FORM_CONFIGS: Record<string, FormConfig> = {
   },
   newsletter: {
     id: 'newsletter',
-    badge: '03 / Career Intelligence Newsletter',
+    badge: 'Career Intelligence Newsletter',
     title: 'A smarter job search, in your inbox',
     description:
       'Bi-weekly briefings on career automation, AI tools, and interview preparation strategy.',
@@ -71,7 +71,7 @@ export const MFC_FORM_CONFIGS: Record<string, FormConfig> = {
   },
   contact: {
     id: 'contact',
-    badge: '04 / Support & Inquiries',
+    badge: 'Support & Inquiries',
     title: "Let's talk",
     description:
       'Have questions, partner inquiries, or product feedback? Reach our team directly.',
@@ -85,7 +85,7 @@ export const MFC_FORM_CONFIGS: Record<string, FormConfig> = {
   },
   demo: {
     id: 'demo',
-    badge: '05 / Product Demonstration Walkthrough',
+    badge: 'Product Demonstration Walkthrough',
     title: 'See AutoSubmit in action',
     description:
       'Schedule a tailored walkthrough of the career agent workflow and form automation features.',

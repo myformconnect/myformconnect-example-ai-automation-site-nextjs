@@ -68,7 +68,7 @@ export default function HowItWorks() {
       <div className="container">
         {/* Section Header */}
         <ScrollReveal style={{ maxWidth: '640px', marginBottom: '36px' }}>
-          <span className="section-label">01 / HOW AUTOSUBMIT WORKS</span>
+          <span className="section-label">HOW AUTOSUBMIT WORKS</span>
           <h2 className="section-title">
             From profile to application, with less repetition.
           </h2>

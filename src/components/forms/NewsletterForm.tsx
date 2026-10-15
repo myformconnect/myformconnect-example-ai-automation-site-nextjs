@@ -97,7 +97,7 @@ export default function NewsletterForm({
         >
           <div>
             <span className="section-label" style={{ marginBottom: '6px' }}>
-              03 / CAREER INTELLIGENCE NEWSLETTER
+              CAREER INTELLIGENCE NEWSLETTER
             </span>
             <h3
               style={{

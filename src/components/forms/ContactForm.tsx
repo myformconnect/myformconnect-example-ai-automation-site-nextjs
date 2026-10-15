@@ -97,7 +97,7 @@ export default function ContactForm({
         >
           <div>
             <span className="section-label" style={{ marginBottom: '6px' }}>
-              04 / SUPPORT & INQUIRIES
+              SUPPORT & INQUIRIES
             </span>
             <h3
               style={{
