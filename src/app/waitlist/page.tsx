@@ -7,9 +7,25 @@ import { Sparkles, Shield, Clock, Users, ArrowRight } from '@/components/Icons';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Join the Early Access Waitlist — AutoSubmit',
+  title: 'Join the Early Access Waitlist',
   description:
     'Secure your spot for early access to AutoSubmit. Be the first to automate repetitive job applications with complete human oversight.',
+  alternates: {
+    canonical: '/waitlist',
+  },
+  openGraph: {
+    title: 'Join the Early Access Waitlist — AutoSubmit',
+    description:
+      'Secure your spot for early access to AutoSubmit. Be the first to automate repetitive job applications with complete human oversight.',
+    url: '/waitlist',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Join the Early Access Waitlist — AutoSubmit',
+    description:
+      'Secure your spot for early access to AutoSubmit. Be the first to automate repetitive job applications with complete human oversight.',
+  },
 };
 
 export default function WaitlistPage() {

@@ -7,9 +7,25 @@ import { Mail, Clock, ShieldCheck, ArrowRight } from '@/components/Icons';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Contact & Support — AutoSubmit',
+  title: 'Contact & Support',
   description:
     'Have questions about AutoSubmit, custom ATS form endpoints, or enterprise partnerships? Get in touch with our team directly.',
+  alternates: {
+    canonical: '/contact',
+  },
+  openGraph: {
+    title: 'Contact & Support — AutoSubmit',
+    description:
+      'Have questions about AutoSubmit, custom ATS form endpoints, or enterprise partnerships? Get in touch with our team directly.',
+    url: '/contact',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact & Support — AutoSubmit',
+    description:
+      'Have questions about AutoSubmit, custom ATS form endpoints, or enterprise partnerships? Get in touch with our team directly.',
+  },
 };
 
 export default function ContactPage() {

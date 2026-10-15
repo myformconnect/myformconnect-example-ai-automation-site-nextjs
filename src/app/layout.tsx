@@ -1,38 +1,133 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import SupportBubble from "@/components/SupportBubble";
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : "https://autosubmitagent.vercel.com");
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
-  title: "AutoSubmit — AI-Powered Career Application Automation",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "AutoSubmit — AI-Powered Career Application Automation",
+    template: "%s | AutoSubmit",
+  },
   description:
-    "AutoSubmit helps job seekers match their profiles with job requirements and prepare career applications with less repetitive work. Featuring bot friendly forms managed by MyFormConnect.",
+    "AutoSubmit helps job seekers match their profiles with job requirements and prepare tailored career applications with less repetitive work. Featuring bot friendly forms managed by MyFormConnect.",
+  applicationName: "AutoSubmit",
+  authors: [{ name: "AutoSubmit Team", url: SITE_URL }],
+  generator: "Next.js",
   keywords: [
     "AutoSubmit",
     "AI career agent",
     "job application automation",
-    "career automation",
+    "career automation copilot",
     "resume matching",
+    "ATS form filler",
+    "applicant tracking system",
+    "career profile staging",
     "bot friendly forms",
     "form managed",
     "MyFormConnect",
     "myformconnect.io",
-    "bot friendly forms by MyFormConnect",
+    "serverless form intake",
   ],
-  authors: [{ name: "AutoSubmit Team" }],
+  referrer: "origin-when-cross-origin",
+  creator: "AutoSubmit",
+  publisher: "AutoSubmit",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "AutoSubmit — AI-Powered Career Application Automation",
-    description:
-      "AutoSubmit matches your profile with job requirements, prepares relevant application details, and helps you move through repetitive forms with less effort.",
     type: "website",
     locale: "en_US",
+    url: SITE_URL,
     siteName: "AutoSubmit",
+    title: "AutoSubmit — AI-Powered Career Application Automation",
+    description:
+      "AutoSubmit matches candidate profiles with target job requirements, extracts qualification signals, and stages draft submissions with 100% human oversight.",
   },
   twitter: {
     card: "summary_large_image",
     title: "AutoSubmit — AI-Powered Career Application Automation",
     description:
-      "AutoSubmit matches your profile with job requirements, prepares relevant application details, and helps you move through repetitive forms with less effort.",
+      "AutoSubmit matches candidate profiles with target job requirements, extracts qualification signals, and stages draft submissions with 100% human oversight.",
+    creator: "@autosubmit",
+    site: "@autosubmit",
   },
+  category: "technology",
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "AutoSubmit",
+      url: SITE_URL,
+      logo: `${SITE_URL}/favicon.ico`,
+      sameAs: ["https://twitter.com/autosubmit"],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        email: "support@autosubmit.work",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "AutoSubmit",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      description: "AI-Powered Career Application Automation Copilot",
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${SITE_URL}/#application`,
+      name: "AutoSubmit",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+      },
+      description:
+        "AI agent that helps job seekers automate repetitive job application tasks by matching user profiles with job requirements and staging tailored application forms.",
+      featureList: [
+        "Resume and career profile parsing",
+        "Target role qualification overlap scoring",
+        "ATS multi-step field pre-filling",
+        "1-click human oversight and review",
+        "Serverless form intake powered by MyFormConnect",
+      ],
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -48,6 +143,10 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body suppressHydrationWarning>

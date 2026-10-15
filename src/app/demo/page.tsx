@@ -7,9 +7,25 @@ import { Eye, FileCheck2, UserCheck, ArrowRight } from '@/components/Icons';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Request a Demo Walkthrough — AutoSubmit',
+  title: 'Request a Demo Walkthrough',
   description:
     'Schedule a tailored 1-on-1 walkthrough of the AutoSubmit career copilot and serverless MyFormConnect form automation.',
+  alternates: {
+    canonical: '/demo',
+  },
+  openGraph: {
+    title: 'Request a Demo Walkthrough — AutoSubmit',
+    description:
+      'Schedule a tailored 1-on-1 walkthrough of the AutoSubmit career copilot and serverless MyFormConnect form automation.',
+    url: '/demo',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Request a Demo Walkthrough — AutoSubmit',
+    description:
+      'Schedule a tailored 1-on-1 walkthrough of the AutoSubmit career copilot and serverless MyFormConnect form automation.',
+  },
 };
 
 export default function DemoPage() {
