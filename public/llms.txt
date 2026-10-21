@@ -1,0 +1,16 @@
+# MyFormConnect LLM Reference & Integration Guide
+
+> MyFormConnect (MFC) is a serverless frontend form handler and appointment booking engine.
+
+## Documentation & Machine-Readable Guides
+- LLM System Prompt & Integration Specification: [/MYFORMCONNECT_LLM_GUIDE.txt](/MYFORMCONNECT_LLM_GUIDE.txt)
+- Developer Integration Guide: [/MYFORMCONNECT_INTEGRATION_GUIDE.md](/MYFORMCONNECT_INTEGRATION_GUIDE.md)
+- Customizable Widget Stylesheet: [/booking-widget.css](/booking-widget.css)
+
+## Key Integration Constraints
+1. Always submit using `new FormData(formElement)`. Never use `JSON.stringify()`.
+2. Do NOT set `Content-Type: multipart/form-data` manually (the browser adds the boundary).
+3. Include AJAX headers: `'Accept': 'application/json'` and `'X-Requested-With': 'XMLHttpRequest'`.
+4. Ensure every input has a `name` attribute.
+5. For booking widget: mount `<div id="mfc-booking-widget" data-booking-widget="" data-form-uuid="..." ...></div>` and load `booking-widget.js`.
+6. Custom styling: Download `booking-widget.css` into your project and customize `:root` variables.
