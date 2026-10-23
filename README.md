@@ -1,6 +1,6 @@
 # AutoSubmit — AI Career Copilot
 
-An AI-powered job application copilot built with **Next.js 16** (App Router), featuring serverless form automation via [MyFormConnect](https://myformconnect.io) and interactive appointment scheduling via [MyFormCapture](https://myformcapture.com).
+An AI-powered job application copilot built with **Next.js 16** (App Router), featuring serverless form automation and interactive appointment scheduling via [MyFormConnect](https://myformconnect.io).
 
 ---
 
